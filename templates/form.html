@@ -1,0 +1,21 @@
+{% load crispy_forms_tags %}
+{% block body %}
+
+<body>
+    <td><a href="/main/" class="btn btn-danger">Anasayfa</a> </td>
+</body>
+  <center>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h1>{{ title }}</h1>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input class="btn btn-primary" type="submit" value="ÜYE KAYIT">
+                </form>
+            </div>
+        </div>
+    </div>
+  </center>
+{% endblock %}
